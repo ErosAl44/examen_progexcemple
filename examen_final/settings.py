@@ -85,4 +85,4 @@ TEMPLATES = [
 WSGI_APPLICATION = 'examen_final.wsgi.application'
 
 LOGIN_URL = '/cuentas/login/'
-LOGIN_REDIRECT_URL = '/galeria/'
+LOGIN_REDIRECT_URL = '/fotos/'
