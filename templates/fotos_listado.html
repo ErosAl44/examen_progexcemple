@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<h2>Galería</h2>
+<a href="/fotos/crear/">Subir nueva foto</a>
+
+<ul>
+{% for foto in object_list %}
+    <li>
+        <img src="{{ foto.imagen.url }}" width="150">
+        <br>
+        {{ foto.titulo }}
+        <br>
+        <a href="/fotos/{{ foto.id }}/editar/">Editar</a> |
+        <a href="/fotos/{{ foto.id }}/borrar/">Borrar</a>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

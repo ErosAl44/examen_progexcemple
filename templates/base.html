@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Examen Final</title>
+</head>
+<body>
+
+{% if user.is_authenticated %}
+    <p>Hola {{ user.username }} | <a href="/logout/">Logout</a></p>
+{% else %}
+    <p><a href="/login/">Ingresá</a> | <a href="/registro/">Registrate</a></p>
+{% endif %}
+
+<hr>
+
+{% block contenido %}{% endblock %}
+
+</body>
+</html>
