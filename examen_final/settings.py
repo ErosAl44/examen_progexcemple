@@ -44,11 +44,17 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # MEDIA
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = BASE_DIR / 'mediafiles'
 
 # DATABASE (local = sqlite / deploy = postgres)
 if 'DATABASE_URL' in os.environ:
-    DATABASES = { 'default': dj_database_url.config(conn_max_age=600) }
+    DATABASES = { 
+        'default': dj_database_url.config(
+            conn_max_age=600, 
+            # ---> AÑADIR ESTO <---
+            ssl_require=True 
+        ) 
+    }
 else:
     DATABASES = {
         'default': {
