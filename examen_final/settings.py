@@ -40,6 +40,9 @@ ROOT_URLCONF = 'examen_final.urls'
 # STATICFILES
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static', # Esto apunta a la carpeta 'static' principal de tu proyecto
+]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # MEDIA
@@ -81,5 +84,5 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'examen_final.wsgi.application'
 
-LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = '/panel/'
+LOGIN_URL = '/cuentas/login/'
+LOGIN_REDIRECT_URL = '/galeria/'
